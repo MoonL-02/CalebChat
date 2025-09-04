@@ -1,0 +1,9 @@
+  <!-- Register Service Worker (place before </body>) -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/CalebChat/service-worker.js')
+          .catch(function(err){ console.log('SW registration failed:', err); });
+      });
+    }
+  </script>

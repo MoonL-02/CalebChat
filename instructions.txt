@@ -1,0 +1,30 @@
+
+CalebChat PWA 一键包（2025-09-04）
+
+【这个压缩包里有什么】
+- manifest.json
+- service-worker.js
+- icons/icon-192.png
+- icons/icon-512.png
+- pwa_head_snippet.html  -> 需要粘贴到 index.html 的 <head> 里（尾部即可）
+- pwa_sw_register_snippet.html -> 需要粘贴到 index.html 的 </body> 之前
+
+【如何使用（零基础友好）】
+1. 把你网站根目录（https://moonl-02.github.io/CalebChat/ 对应的仓库根目录）里现有的首页文件名改为 index.html。
+   如果已经叫 index.html 就不用改。
+2. 把本压缩包里的文件整体拷贝到同一个根目录（保持 icons 文件夹结构不变）。
+3. 用任意编辑器打开 index.html：
+   3.1 在 <head> ... </head> 之间的最后面，粘贴 pwa_head_snippet.html 的内容。
+   3.2 在 </body> 之前，粘贴 pwa_sw_register_snippet.html 的内容。
+   保存文件。
+4. 提交到 GitHub（或你部署的位置），等待网页更新。
+5. 在 iPhone/iPad 的 Safari 打开 https://moonl-02.github.io/CalebChat/ ：
+   - 点击底部分享按钮 -> “添加到主屏幕”。
+   - 从主屏幕打开后就是独立全屏（PWA 模式）。
+6. 离线测试：断网后重新打开“主屏幕图标”，应能至少打开首页（部分在线功能需要网络）。
+
+【注意】
+- 如果你的仓库不是 /CalebChat/ 这个路径，请把 manifest.json 和 service-worker.js 里的路径从 /CalebChat/ 改成你的路径；
+  同时 body 里的注册路径也要改（/你的仓库名/service-worker.js）。
+- 图标可以以后换成自己的，只要保持文件名和尺寸一致即可。
+- iOS 下不会自动弹安装提示，需要用户通过“分享 -> 添加到主屏幕”。
